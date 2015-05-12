@@ -52,6 +52,41 @@
                                     <field name="OBJECT">RIGHTFRONT</field>
                                   </block>
                                 </value>
+                                <next>
+                                  <block type="controls_if" id="78" inline="false">
+                                    <mutation else="1"></mutation>
+                                    <value name="IF0">
+                                      <block type="logic_compare" id="89" inline="true">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="sensor_object" id="105">
+                                            <field name="OBJECT">LEFTFRONT</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="112">
+                                            <field name="NUM">80</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="movement_right" id="122"></block>
+                                    </statement>
+                                    <statement name="ELSE">
+                                      <block type="movement_forward" id="132"></block>
+                                    </statement>
+                                    <next>
+                                      <block type="robot_delay" id="143" inline="true">
+                                        <value name="DELAY">
+                                          <block type="math_number" id="150">
+                                            <field name="NUM">100</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
                               </block>
                             </next>
                           </block>
@@ -66,5 +101,8 @@
         </next>
       </block>
     </statement>
+    <next>
+      <block type="movement_stop" id="160"></block>
+    </next>
   </block>
 </xml>
