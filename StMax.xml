@@ -54,7 +54,7 @@
                                 </value>
                                 <next>
                                   <block type="controls_if" id="78" inline="false">
-                                    <mutation else="1"></mutation>
+                                    <mutation elseif="1" else="1"></mutation>
                                     <value name="IF0">
                                       <block type="logic_compare" id="89" inline="true">
                                         <field name="OP">LT</field>
@@ -72,6 +72,24 @@
                                     </value>
                                     <statement name="DO0">
                                       <block type="movement_right" id="122"></block>
+                                    </statement>
+                                    <value name="IF1">
+                                      <block type="logic_compare" id="166" inline="true">
+                                        <field name="OP">LT</field>
+                                        <value name="A">
+                                          <block type="sensor_object" id="167">
+                                            <field name="OBJECT">LEFTFRONT</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="168">
+                                            <field name="NUM">80</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO1">
+                                      <block type="movement_left" id="178"></block>
                                     </statement>
                                     <statement name="ELSE">
                                       <block type="movement_forward" id="132"></block>
